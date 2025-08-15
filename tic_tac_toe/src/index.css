@@ -1,39 +1,47 @@
+/* 全局基础样式（可类比为 App 级别的样式表） */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  /* 字体抗锯齿，提升文本渲染质量 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 代码字体栈 */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* 游戏整体布局：棋盘 + 右侧历史列表 */
 .game {
   display: flex;
   flex-direction: row;
   margin: 20px;
 }
 
+/* 右侧信息区（显示历史步数） */
 .game-info {
   margin-left: 20px;
 }
 
+/* 清除浮动，保证每行高度正确 */
 .board-row:after {
   clear: both;
   content: "";
   display: table;
 }
 
+/* 顶部状态提示（下一手/赢家） */
 .status {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
 }
 
+/* 单个棋子格子的样式（按钮） */
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -49,22 +57,27 @@ code {
   width: 34px;
 }
 
+/* 去除按钮聚焦时的外框 */
 .square:focus {
   outline: none;
 }
 
+/* 当用户使用键盘导航时，给聚焦的格子一个高亮背景 */
 .kbd-navigation .square:focus {
   background: #ddd;
 }
 
+/* 历史列表缩进 */
 .game-info ol {
   padding-left: 30px;
 }
 
+/* 历史项之间的间距 */
 .game-info li {
   margin-bottom: 5px;
 }
 
+/* 历史按钮的样式 */
 .game-info button {
   background: #f0f0f0;
   border: 1px solid #999;
@@ -72,6 +85,7 @@ code {
   cursor: pointer;
 }
 
+/* 悬停时稍微加深背景色 */
 .game-info button:hover {
   background: #e0e0e0;
 }
