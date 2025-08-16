@@ -7,6 +7,8 @@ import { useState } from 'react';
 // props:
 // - value: 当前格子里显示的内容（'X' / 'O' / null）
 // - onSquareClick: 点击该格子时触发的回调（由父组件传入）
+
+
 function Square({ value, onSquareClick }) {
   return (
     // 注意：在 React 中用 className 而不是 class
