@@ -9,10 +9,11 @@ import './index.css';
 import App from './App';
 
 // 通过 React 18 的 createRoot API 挂载到 public/index.html 里的 #root 节点
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+if (!container) throw new Error('Root container #root not found');
+const root = ReactDOM.createRoot(container as HTMLElement);
 root.render(
-  // StrictMode 只在开发环境做额外检查（例如重复调用某些生命周期），
-  // 以帮助你发现潜在问题；生产构建不会启用这些额外检查
+  // StrictMode 只在开发环境做额外检查，以帮助你发现潜在问题；生产构建不会启用
   <React.StrictMode>
     <App />
   </React.StrictMode>
